@@ -1,7 +1,7 @@
 class Pizza():	
 	def __init__(self) -> None:
-		self.ingridients=[]
-		self.totalPrice=0
+		self.ingridients = []
+		self.totalPrice = 0
 	
 	def addIngridient(self, ingridient) -> None:
 		self.ingridients.append(ingridient)

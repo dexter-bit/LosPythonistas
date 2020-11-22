@@ -1,5 +1,10 @@
 # LosPythonistas
-proyecto electiva python
+Proyecto #1 para la materia electiva "Programación en Python"
+Integrantes del equipo:
+- Luis Pinto
+- Dexter Ramos
+- José Andrés Rodríguez
+- Ángel Sucasas
 
 
 ## Diagrama de clases del proyecto 
