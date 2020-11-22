@@ -1,8 +1,11 @@
 from PizzaBuilder import PizzaBuilder
+from Pizza import Pizza
 
 class ParticularPizzaBuilder(PizzaBuilder):	
-	def __init__(self):
-		self.test="prueba"
+	pizza: Pizza
+
+	def __init__(self,pizza):
+		self.Pizza=pizza
 
 	def getPizza(self) -> None:
 		pass

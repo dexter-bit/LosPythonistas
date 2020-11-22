@@ -4,7 +4,7 @@ from Pizza import Pizza
 from PizzaBuilder import PizzaBuilder
 
 from abc import ABC, abstractmethod, abstractproperty
-import colorama
+#import colorama
 
 def print_header():
 	print("""
@@ -13,10 +13,10 @@ def print_header():
 		Programación en Python - Proyecto #1
 
 		Integrantes del equipo:
-		Luis Pinto - CI:
-		Dexter Ramos - CI:
+		Luis Pinto - CI: 25210435
+		Dexter Ramos - CI: 24204991
 		José Andrés Rodríguez Pérez - CI: 27.663.836
-		Ángel Sucasas - CI: 
+		Ángel Sucasas - CI: 28.027.948
 		
 		*****************************
 		*       PIZZERIA UCAB       *
@@ -67,8 +67,11 @@ def seleccionar_ingredientes():
 
 class main():
 	director = Kitchen()
-	builder = ParticularPizzaBuilder()
+	pizza = Pizza()
+	clientPizza = []
+	builder = ParticularPizzaBuilder(pizza)
 	director.builder = builder
+
 
 	exit = False
 
