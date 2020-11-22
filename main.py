@@ -30,7 +30,7 @@ def seleccionar_tamaño():
 		SELECCIONE EL TAMAÑO
 		Opciones: Grande ( g ) Mediana ( m ) Personal ( p )""", end = ": ")
 	userResponse = input()
-	if userResponse == 'g' or userResponse == 'm' or userResponse == 'p':
+	if userResponse == 'g' or userResponse == 'm' or userResponse == 'm':
 		pass
 	else:
 		print(colorama.Fore.RED + """
@@ -71,12 +71,13 @@ class main():
 	clientPizza = []
 	builder = ParticularPizzaBuilder(pizza)
 	director.builder = builder
+	builder.agregarPimientos()
+	builder.getPizza()
 
-
-	exit = False
+	"""exit = False
 
 	while exit == False:
 		print_header()
 		seleccionar_tamaño()
-		seleccionar_ingredientes()
+		seleccionar_ingredientes()"""
 		

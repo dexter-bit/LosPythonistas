@@ -7,20 +7,21 @@ class ParticularPizzaBuilder(PizzaBuilder):
 	def __init__(self,pizza):
 		self.Pizza=pizza
 
-	def getPizza(self) -> None:
-		pass
+	def getPizza(self):
+		self.Pizza.list_parts()
 
-	def setPizza(self) -> None:
-		pass
+	def setPizza(self,ingridient):
+		self.Pizza.addIngridient('pimientos')
+		
 
 	def agregarJamon(self) -> None:
 		pass
 
-	def agregarChampiñones(self) -> None:
-		pass
+	def agregarChampiñones(self):
+		print("hola soy un champiñon")
 
-	def agregarPimientos(self) -> None:
-		pass
+	def agregarPimientos(self):
+		self.Pizza.addIngridient('pimientos')
 
 	def agregarDobleQueso(self) -> None:
 		pass
