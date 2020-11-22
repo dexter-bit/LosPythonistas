@@ -57,7 +57,12 @@ def seleccionar_ingredientes():
 	userResponse = input()
 
 	if userResponse == 'ja' or userResponse == 'ch' or userResponse == 'pi' or userResponse == 'dq' or userResponse == 'ac' or userResponse == 'pp' or userResponse == 'sa':
-		seleccionar_ingredientes()
+		print("Desea seleccionar otro ingrediente? \n\n Para agregar escriba *si* para declinar escriba *no*")
+		userResponse = input()
+		if 	userResponse == 'si' :
+			seleccionar_ingredientes()
+		elif userResponse == 'no':
+			return 0
 	else:
 		print(colorama.Fore.RED + """
 			Debe seleccionar un ingrediente correcto!!""")
