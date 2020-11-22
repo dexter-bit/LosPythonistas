@@ -6,6 +6,7 @@ class ParticularPizzaBuilder(PizzaBuilder):
 
 	def getPizza(self) -> None:
 		pass
+		
 
 	def setPizza(self) -> None:
 		pass

@@ -11,29 +11,29 @@ class PizzaBuilder(object):
         pass
 
     @abstractmethod
-    def agregarJamon(self) -> None:
+    def addHam(self) -> None:
         pass
 
     @abstractmethod
-    def agregarChampiñones(self) -> None:
+    def addMushrooms(self) -> None:
         pass
 
     @abstractmethod
-    def agregarPimientos(self) -> None:
+    def addPeppers(self) -> None:
         pass
 
     @abstractmethod
-    def agregarDobleQueso(self) -> None:
+    def addDoubleCheese(self) -> None:
         pass
 
     @abstractmethod
-    def agregarAceitunas(self) -> None:
+    def addOlive(self) -> None:
         pass
 
     @abstractmethod
-    def agregarPepperoni(self) -> None:
+    def addPepperoni(self) -> None:
         pass
 
     @abstractmethod
-    def agregarSalchichon(self) -> None:
+    def addSalami(self) -> None:
         pass
