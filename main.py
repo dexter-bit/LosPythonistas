@@ -30,7 +30,7 @@ def seleccionar_tamaño():
 		SELECCIONE EL TAMAÑO
 		Opciones: Grande ( g ) Mediana ( m ) Personal ( p )""", end = ": ")
 	userResponse = input()
-	if userResponse == 'g' or userResponse == 'm' or userResponse == 'm':
+	if userResponse == 'g' or userResponse == 'm' or userResponse == 'p':
 		pass
 	else:
 		print(colorama.Fore.RED + """
