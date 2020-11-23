@@ -48,7 +48,9 @@ def chooseSize(size, builder):
         builder.setPrice(280)		
         return 1		
     else:
-        print('tamaño invalido')		
+        print(colorama.Fore.RED + """
+            Debe seleccionar el tamaño correcto!!""")
+        print(colorama.Style.RESET_ALL)		
     return 0
 
 def showIngredientsMenu():
@@ -73,7 +75,7 @@ def selectIngredients(builder):
 	if(userResponse=="" and not len(builder.getPizza())):
 		print("\n\t\tUsted ha seleccionado un pizza "+builder.getSize()+" Margarita")
 		return 0
-	elif (userResponse==""):
+	elif(userResponse==""):
 		print("\n\t\tUsted a seleccionado una pizza "+builder.getSize()+" con: ",end= '')
 		builder.getIngre()
 		return 0
