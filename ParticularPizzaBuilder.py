@@ -34,4 +34,7 @@ class ParticularPizzaBuilder(PizzaBuilder):
 
 	def agregarSalchichon(self) -> None:
 		pass
+
+	def setSize(self,string) ->None:
+		pass
 		

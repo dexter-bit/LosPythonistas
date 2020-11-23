@@ -30,7 +30,7 @@ def seleccionar_tamaño():
 		SELECCIONE EL TAMAÑO
 		Opciones: Grande ( g ) Mediana ( m ) Personal ( p )""", end = ": ")
 	userResponse = input()
-	if userResponse == 'g' or userResponse == 'm' or userResponse == 'm':
+	if userResponse == 'g' or userResponse == 'm' or userResponse == 'p':
 		pass
 	else:
 		print(colorama.Fore.RED + """
@@ -55,14 +55,19 @@ def seleccionar_ingredientes():
 
 		Indique el ingrediente (Pulse enter para terminar)""", end = ": ")
 	userResponse = input()
+	ingredientSelection(userResponse)
+	
+	"""if (userResponse == 'ja'): 
 
-	if userResponse == 'ja' or userResponse == 'ch' or userResponse == 'pi' or userResponse == 'dq' or userResponse == 'ac' or userResponse == 'pp' or userResponse == 'sa':
+	elif (userResponse == 'ch'):
+
+	elif userResponse == 'pi' or userResponse == 'dq' or userResponse == 'ac' or userResponse == 'pp' or userResponse == 'sa':
 		seleccionar_ingredientes()
 	else:
-		print(colorama.Fore.RED + """
-			Debe seleccionar un ingrediente correcto!!""")
+		print(colorama.Fore.RED + 
+			Debe seleccionar un ingrediente correcto!!)
 		print(colorama.Style.RESET_ALL)
-		seleccionar_ingredientes()
+		seleccionar_ingredientes()"""
 
 
 class main():
@@ -81,3 +86,19 @@ class main():
 		seleccionar_tamaño()
 		seleccionar_ingredientes()"""
 		
+def ingredientSelection(argument):
+    switcher = {
+        1: "January",
+        2: "February",
+        3: "March",
+        4: "April",
+        5: "May",
+        6: "June",
+        7: "July",
+        8: "August",
+        9: "September",
+        10: "October",
+        11: "November",
+        12: "December"
+    }
+    print switcher.get(argument, "Invalid month") 
