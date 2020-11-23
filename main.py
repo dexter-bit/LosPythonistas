@@ -39,7 +39,7 @@ def seleccionar_tamaño():
 		seleccionar_tamaño()
 
 
-def seleccionar_ingredientes():
+def selectIngridients(pizza):
 	userResponse = ''
 
 	print("""
@@ -70,22 +70,24 @@ def seleccionar_ingredientes():
 		seleccionar_ingredientes()"""
 
 
-class main():
-	director = Kitchen()
-	pizza = Pizza()
-	clientPizza = []
-	builder = ParticularPizzaBuilder(pizza)
-	director.builder = builder
-	builder.agregarPimientos()
+class main():	
+	"""builder.agregarPimientos()
 	builder.getPizza()
 	builder.setSize("grande")
 	print("\n")
-	builder.getSize()
+	builder.getSize()"""
 
-	"""exit = False
+	exit = False
 
+	clientPizza = []
 	while exit == False:
+		pizza = Pizza()
+		director = Kitchen()
+		builder = ParticularPizzaBuilder(pizza)
+		director.builder = builder
+		
+
 		print_header()
 		seleccionar_tamaño()
-		seleccionar_ingredientes()"""
+		selecciectIngridients(pizza)
 		
