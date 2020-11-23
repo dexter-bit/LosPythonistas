@@ -11,10 +11,16 @@ class Pizza():
         self.size = size
 
     def addPrice(self, price):
-        self.totalPrice = price
+        self.totalPrice += price
+
+    def getPrice(self):
+        return self.totalPrice
 
     def list_parts(self) -> None:
         print(f"pizza ingridients: {', '.join(self.ingredients)}", end="")
 
-    def getPizzaSize(self) -> None:
-        print(self.size)
+    def getSize(self) -> None:
+        return self.size
+
+    def getIngredients(self):
+        return self.ingredients

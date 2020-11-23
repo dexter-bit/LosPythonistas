@@ -1,5 +1,12 @@
 from PizzaBuilder import PizzaBuilder
 from Pizza import Pizza
+from ingredients.Ham import Ham
+from ingredients.Cheese import Cheese
+from ingredients.Mushroom import Mushroom
+from ingredients.Olive import Olive
+from ingredients.Pepper import Pepper
+from ingredients.Pepperoni import Pepperoni
+from ingredients.Salami import Salami
 
 class ParticularPizzaBuilder(PizzaBuilder): 
     pizza: Pizza
@@ -8,38 +15,49 @@ class ParticularPizzaBuilder(PizzaBuilder):
         self.Pizza=pizza
 
     def getPizza(self):
-        self.Pizza.list_parts()
-
-    def setPizza(self,ingridient):
-        self.Pizza.addIngredient('pimientos')
+        return self.Pizza.getIngredients()
         
+    def addHam(self) -> None:
+        ham = Ham()
+        self.Pizza.addIngredient(ham.name)
+        self.Pizza.addPrice(ham.price)
 
-    def agregarJamon(self) -> None:
-        pass
+    def addMushrooms(self):
+        mushroom = Mushroom()
+        self.Pizza.addIngredient(mushroom.name)
+        self.Pizza.addPrice(mushroom.price)
 
-    def agregarChampiñones(self):
-        print("hola soy un champiñon")
+    def addPeppers(self):
+        pepper = Pepper()
+        self.Pizza.addIngredient(pepper.name)
+        self.Pizza.addPrice(pepper.price)
 
-    def agregarPimientos(self):
-        self.Pizza.addIngredient('pimientos')
+    def addDoubleCheese(self) -> None:
+        cheese = Cheese()
+        self.Pizza.addIngredient(cheese.name)
+        self.Pizza.addPrice(cheese.price)
 
-    def agregarDobleQueso(self) -> None:
-        pass
+    def addOlive(self) -> None:
+        olive = Olive()
+        self.Pizza.addIngredient(olive.name)
+        self.Pizza.addPrice(olive.price)
 
-    def agregarAceitunas(self) -> None:
-        pass
+    def addPepperoni(self) -> None:
+        pepperoni = Pepperoni()
+        self.Pizza.addIngredient(pepperoni.name)
+        self.Pizza.addPrice(pepperoni.price)
 
-    def agregarPepperoni(self) -> None:
-        pass
+    def addSalami(self) -> None:
+        salami = Salami()
+        self.Pizza.addIngredient(salami.name)
+        self.Pizza.addPrice(salami.price)
 
-    def agregarSalchichon(self) -> None:
-        pass
-
-    def setSize(self,string) ->None:
-        pass
-    
-    def setSize(self,size) -> None:
+    def setSize(self,size,price) -> None:
         self.Pizza.addSize(size)
+        self.Pizza.addPrice(price)
     
     def getSize(self) -> None:
-        self.Pizza.getPizzaSize()
+        return self.Pizza.getSize()
+
+    def getPrice(self) -> None:
+        return self.Pizza.getPrice()
