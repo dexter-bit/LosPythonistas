@@ -163,5 +163,9 @@ class main():
 		exit = selectAnotherPizza()
 		showAllTargetPizzaData(builder)
 
-	print("El pedido tiene un total de "+str(len(clientPizza))+" pizza(s) por un monto de "+str(getTotalPizzasPrice(clientPizza)))
-	print("Gracias por su compra, regrese pronto")
+	print("""
+		El pedido tiene un total de """ + str(len(clientPizza)) + """ pizza(s) por un monto de """ + str(getTotalPizzasPrice(clientPizza)))
+	print("""
+		Gracias por su compra, regrese pronto
+		
+		""")
