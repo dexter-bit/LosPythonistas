@@ -4,17 +4,40 @@ from Pizza import Pizza
 from PizzaBuilder import PizzaBuilder
 
 from abc import ABC, abstractmethod, abstractproperty
-# import colorama
+import colorama
 
 def selectAnotherPizza():
 	print("""
-		¿Desea continuar?[s/n]: """)
+		¿Desea agregar otra pizza?[s/n]: """)
 	userResponse = input()
 	if (userResponse == "s"):
 		return False
-	if (userResponse == "n"):
-		return True 
+	elif (userResponse == "S"):
+		return False 
+	elif (userResponse == "n"):
+		return True
+	elif (userResponse == "N"):
+		return True  
+	else:
+		print('Respuesta invalida, intente otra vez')
+		selectAnotherPizza()
 	
+def chooseSize(size,builder):
+	if size == "g":
+		builder.setSize("Grande")
+		builder.setPrice(580)		
+		return 1
+	elif size == "m":
+		builder.setSize("Mediano")		
+		builder.setPrice(430)	
+		return 1
+	elif size == "p":
+		builder.setSize("Personal")	
+		builder.setPrice(280)		
+		return 1		
+	else:
+		print('tamaño invalido')		
+	return 0
 
 def chooseIngredient(choosenIngredients,builder):
 	if choosenIngredients == "ja":
@@ -54,20 +77,21 @@ def print_header():
 		*****************************
 		""")
 
-def seleccionar_tamaño():
+def seleccionar_tamaño(builder):
 	userResponse = ''
 
 	print("""
 		SELECCIONE EL TAMAÑO
 		Opciones: Grande ( g ) Mediana ( m ) Personal ( p )""", end = ": ")
 	userResponse = input()
-	if userResponse == 'g' or userResponse == 'm' or userResponse == 'p':
+	correctSize = chooseSize(userResponse,builder)
+	if correctSize != 0:
 		pass
 	else:
-		#print(colorama.Fore.RED + """
-		#	Debe seleccionar el tamaño correcto!!""")
-		#print(colorama.Style.RESET_ALL)
-		seleccionar_tamaño()
+		print(colorama.Fore.RED + """
+			Debe seleccionar el tamaño correcto!!""")
+		print(colorama.Style.RESET_ALL)
+		seleccionar_tamaño(builder)
 
 def showIngredientsMenu():
 	print("""
@@ -125,7 +149,7 @@ class main():
 		
 		print("""
 			Pizza número """+ str(len(clientPizza)))
-		seleccionar_tamaño()
+		seleccionar_tamaño(builder)
 		showIngredientsMenu()
 		selectIngredients(builder)
 		exit = selectAnotherPizza()

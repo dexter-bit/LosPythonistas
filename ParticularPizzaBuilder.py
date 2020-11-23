@@ -52,8 +52,10 @@ class ParticularPizzaBuilder(PizzaBuilder):
         self.Pizza.addIngredient(salami.name)
         self.Pizza.addPrice(salami.price)
 
-    def setSize(self,size,price) -> None:
+    def setSize(self,size) -> None:
         self.Pizza.addSize(size)
+
+    def setPrice(self,price) -> None:    
         self.Pizza.addPrice(price)
     
     def getSize(self) -> None:
