@@ -1,5 +1,5 @@
 from Pizza import Pizza
-from PizzaBuilder import PizzaBuilder
+from Builders.PizzaBuilder import PizzaBuilder
 
 class MargaritaPizzaBuilder(PizzaBuilder):	
 	def __init__(self):

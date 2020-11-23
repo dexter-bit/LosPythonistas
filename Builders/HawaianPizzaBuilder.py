@@ -1,4 +1,4 @@
-from PizzaBuilder import PizzaBuilder
+from Builders.PizzaBuilder import PizzaBuilder
 
 class HawaianPizzaBuilder(PizzaBuilder):	
 	def __init__(self):

@@ -1,7 +1,7 @@
 from Kitchen import Kitchen
-from ParticularPizzaBuilder import ParticularPizzaBuilder
+from Builders.ParticularPizzaBuilder import ParticularPizzaBuilder
 from Pizza import Pizza
-from PizzaBuilder import PizzaBuilder
+from Builders.PizzaBuilder import PizzaBuilder
 import Menu
 
 from abc import ABC, abstractmethod, abstractproperty
