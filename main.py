@@ -79,6 +79,7 @@ class main():
 	builder.agregarPimientos()
 	builder.getPizza()
 	builder.setSize("grande")
+	print("\n")
 	builder.getSize()
 
 	"""exit = False

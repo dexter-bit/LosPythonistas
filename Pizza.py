@@ -4,8 +4,8 @@ class Pizza():
         self.totalPrice = 0
         self.size = "" 
     
-    def addIngredient(self, ingridient):
-        self.ingredients.append(ingridient)
+    def addIngredient(self, ingredient):
+        self.ingredients.append(ingredient)
 
     def addSize(self, size):
         self.size = size
@@ -14,7 +14,7 @@ class Pizza():
         self.totalPrice = price
 
     def list_parts(self) -> None:
-        print(f"pizza ingridients: {', '.join(self.ingridients)}", end="")
+        print(f"pizza ingridients: {', '.join(self.ingredients)}", end="")
 
     def getPizzaSize(self) -> None:
         print(self.size)
