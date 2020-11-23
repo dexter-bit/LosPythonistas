@@ -37,4 +37,9 @@ class ParticularPizzaBuilder(PizzaBuilder):
 
 	def setSize(self,string) ->None:
 		pass
-		
+	
+	def setSize(self,size) -> None:
+		self.Pizza.addSize(size)
+	
+	 def getSize() -> None:
+	 	self.Pizza.getPizzaSize()

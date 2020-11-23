@@ -37,3 +37,7 @@ class PizzaBuilder(object):
     @abstractmethod
     def addSalami(self) -> None:
         pass
+
+    @abstractmethod
+    def setSize(self) -> None:
+        pass
