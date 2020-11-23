@@ -63,3 +63,7 @@ class ParticularPizzaBuilder(PizzaBuilder):
 
     def getPrice(self) -> None:
         return self.Pizza.getPrice()
+
+    def getIngre(self) -> None:
+        self.Pizza.list_parts()
+

@@ -28,7 +28,7 @@ def chooseSize(size,builder):
 		builder.setPrice(580)		
 		return 1
 	elif size == "m":
-		builder.setSize("Mediano")		
+		builder.setSize("Mediana")		
 		builder.setPrice(430)	
 		return 1
 	elif size == "p":
@@ -53,12 +53,13 @@ def chooseIngredient(choosenIngredients,builder):
 	elif choosenIngredients == "pp":
 		builder.addPepperoni()
 	elif choosenIngredients == "sa":
-		builder.addSalami()
+		builder.addSalami()	
 	elif choosenIngredients == "":
-		return 1		
+		return 1
 	else:
 		print('ingrediente invalido')		
-	return 0
+		return 0
+	return 1
 
 def print_header():
 	print("""
@@ -112,9 +113,14 @@ def selectIngredients(builder):
 		Indique el ingrediente (Pulse enter para terminar)""", end = ": ")
 	userResponse = input()	
 	correctIngredients = chooseIngredient(userResponse,builder)
-	if(userResponse==""):
+	if(userResponse=="" and not len(builder.getPizza())):
+		print("\n\t\tUsted ha seleccionado un pizza "+builder.getSize()+" Margarita")
 		return 0
-	elif(correctIngredients==1):		
+	elif (userResponse==""):
+		print("\n\t\tUsted a seleccionado una pizza "+builder.getSize()+" con: ",end= '')
+		builder.getIngre()
+		return 0
+	elif(correctIngredients==0):		
 		#print(colorama.Fore.RED +""" 
 		print("Debe seleccionar un ingrediente correcto!!")
 		#print(colorama.Style.RESET_ALL)
