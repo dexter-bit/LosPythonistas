@@ -8,7 +8,7 @@ import colorama
 
 def selectAnotherPizza():
 	print("""
-		¿Desea agregar otra pizza?[s/n]: """)
+		¿Desea agregar otra pizza?[s/n]""", end = ": ")
 	userResponse = input()
 	if (userResponse == "s"):
 		return False
@@ -131,7 +131,9 @@ def selectIngredients(builder):
 def showAllTargetPizzaData(builder):
 	#print("Usted selecciono una pizza "+ str(builder.getSize())+" con ")
 	#print("Subtotal a pagar por una pizza "+builder.getSize()+" : " + builder.getPrice())
-	print("*******************************************")
+	print("""
+		*******************************************
+		""")
 
 def getTotalPizzasPrice(pizzas):
 	totalPrice = 0
