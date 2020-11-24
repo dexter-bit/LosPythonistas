@@ -61,7 +61,12 @@ def showIngredientsMenu():
 	print("""
 		SELECCIONE LOS INGREDIENTES O PREFIERE UNA PIZZA DEL MENU
 		Menu:
-		Margarita     (ma)....................... 80 + coste del tamaño
+		Margarita		(ma)....................... 80 + coste del tamaño	-> jamon, doble queso
+		Full House		(fh)....................... 303.5 + coste del tamaño	-> todos los ingredientes
+		Champimenton		(cp)....................... 65 + coste del tamaño	-> champiñones, pimenton
+		Vegetariana		(vg)....................... 122.5 + coste del tamaño	-> champiñones, pimenton, aceitunas
+		Especial		(es)....................... 141 + coste del tamaño	-> jamon, pepperoni, salchichon
+		Quesoroni		(qs)....................... 78.5 + coste del tamaño	-> doble queso, pepperoni
 
 		Ingredientes:
 		Jamón         (ja)....................... 40
@@ -77,11 +82,22 @@ def selectIngredients(builder):
 	userResponse = ''
 
 	print("""
-		Indique el ingrediente (Pulse enter para terminar)""", end = ": ")
+		Indique la opcion (Pulse enter para terminar)""", end = ": ")
 	userResponse = input()	
 	if (userResponse == "ma"):
 		correctIngredients = margarita(builder)
-	correctIngredients = chooseIngredient(userResponse,builder)
+	elif userResponse == "fh":
+		correctIngredients = fullhouse(builder)
+	elif userResponse == "cp":
+		correctIngredients = champimenton(builder)
+	elif userResponse == "vg":
+		correctIngredients = vegetariana(builder)
+	elif userResponse == "es":
+		correctIngredients = especial(builder)
+	elif userResponse == "qs":
+		correctIngredients = quesoroni(builder)
+	else:
+		correctIngredients = chooseIngredient(userResponse,builder)
 	if(userResponse=="" and not len(builder.getPizza())):
 		print("\n\t\tUsted ha seleccionado un pizza "+builder.getSize()+" Margarita")
 		return 0
@@ -158,3 +174,31 @@ def getTotalPizzasPrice(pizzas):
 def margarita(builder):
 	chooseIngredient("ja",builder)
 	chooseIngredient("dq",builder)
+
+def fullhouse(builder):
+	chooseIngredient("ja",builder)
+	chooseIngredient("dq",builder)
+	chooseIngredient("ch",builder)
+	chooseIngredient("ac",builder)
+	chooseIngredient("pp",builder)
+	chooseIngredient("sa",builder)
+	chooseIngredient("pi",builder)
+
+def champimenton(builder):
+	chooseIngredient("pi",builder)
+	chooseIngredient("ch",builder)
+
+def vegetariana(builder):
+	chooseIngredient("pi",builder)
+	chooseIngredient("ch",builder)
+	chooseIngredient("ac",builder)
+
+def especial(builder):
+	chooseIngredient("ja",builder)
+	chooseIngredient("sa",builder)
+	chooseIngredient("pp",builder)
+
+def quesoroni(builder):
+	chooseIngredient("dq",builder)
+	chooseIngredient("pp",builder)
+	

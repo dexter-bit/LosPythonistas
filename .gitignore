@@ -8,3 +8,4 @@ __pycache__/Pizza.cpython-39.pyc
 __pycache__/ParticularPizzaBuilder.cpython-39.pyc
 __pycache__/Kitchen.cpython-39.pyc
 *.pyc
+__pycache__/Menu.cpython-39.pyc
