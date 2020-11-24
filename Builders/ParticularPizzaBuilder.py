@@ -22,12 +22,12 @@ class ParticularPizzaBuilder(PizzaBuilder):
         self.Pizza.addIngredient(ham.name)
         self.Pizza.addPrice(ham.price)
 
-    def addMushrooms(self):
+    def addMushrooms(self) -> None:
         mushroom = Mushroom()
         self.Pizza.addIngredient(mushroom.name)
         self.Pizza.addPrice(mushroom.price)
 
-    def addPeppers(self):
+    def addPeppers(self) -> None:
         pepper = Pepper()
         self.Pizza.addIngredient(pepper.name)
         self.Pizza.addPrice(pepper.price)

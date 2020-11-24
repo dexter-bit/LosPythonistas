@@ -8,8 +8,8 @@ def print_header():
 		Programación en Python - Proyecto #1
 
 		Integrantes del equipo:
-		Luis Pinto - CI: 25210435
-		Dexter Ramos - CI: 24204991
+		Luis Pinto - CI: 25.210.435
+		Dexter Ramos - CI: 24.204.991
 		José Andrés Rodríguez Pérez - CI: 27.663.836
 		Ángel Sucasas - CI: 28.027.948
 		
@@ -35,6 +35,7 @@ def seleccionar_tamaño(builder):
         print(colorama.Style.RESET_ALL)
         seleccionar_tamaño(builder)
 
+
 #Funcion para seleccionar el tamaño
 def chooseSize(size, builder):
     if size == "g":
@@ -58,7 +59,10 @@ def chooseSize(size, builder):
 #Menu de los ingredientes (Texto)
 def showIngredientsMenu():
 	print("""
-		SELECCIONE LOS INGREDIENTES
+		SELECCIONE LOS INGREDIENTES O PREFIERE UNA PIZZA DEL MENU
+		Menu:
+		Margarita     (ma)
+
 		Ingredientes:
 		Jamón         (ja)
 		Champiñones   (ch)
@@ -75,6 +79,8 @@ def selectIngredients(builder):
 	print("""
 		Indique el ingrediente (Pulse enter para terminar)""", end = ": ")
 	userResponse = input()	
+	if (userResponse == "ma"):
+		correctIngredients = margarita(builder)
 	correctIngredients = chooseIngredient(userResponse,builder)
 	if(userResponse=="" and not len(builder.getPizza())):
 		print("\n\t\tUsted ha seleccionado un pizza "+builder.getSize()+" Margarita")
@@ -146,3 +152,24 @@ def getTotalPizzasPrice(pizzas):
 		print(pizza)
 		totalPrice += pizza.getPrice()
 	return totalPrice
+
+def pizzaTipe(builder):
+    userResponse = ''
+
+    print("""
+        SELECCIONE EL TIPO DE PIZZA
+        Opciones: Margarita ( ma ) """, end = ": ")
+    userResponse = input()
+    correctSize = seleccionar_tamaño(builder, userResponse)
+	
+    if correctSize != 0:
+        pass
+    else:
+        print(colorama.Fore.RED + """
+            Debe seleccionar el tamaño correcto!!""")
+        print(colorama.Style.RESET_ALL)
+        seleccionar_tamaño(builder)
+
+def margarita(builder):
+	chooseIngredient("ja",builder)
+	chooseIngredient("dq",builder)
