@@ -11,10 +11,10 @@ import colorama
 class main():	
 	exit = False
 	Menu.print_header()
-	clientPizza = []
+	clientPizza = [] #Lista de las pizzas
 
 	while exit == False:
-		builder = ParticularPizzaBuilder(pizza)
+		pizza = Pizza() #Objeto pizza
 		director = Kitchen() #Objeto cocina
 		builder = ParticularPizzaBuilder(pizza) #Constructor de la pizza 		director.builder = builder
 		clientPizza.append(pizza)
