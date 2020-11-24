@@ -24,7 +24,7 @@ def seleccionar_tamaño(builder):
 
     print("""
         SELECCIONE EL TAMAÑO
-        Opciones: Grande ( g ) Mediana ( m ) Personal ( p )""", end = ": ")
+        Opciones: Grande ( g ) -> [580], Mediana ( m ) -> [430], Personal ( p ) -> [280]""", end = ": ")
     userResponse = input()
     correctSize = chooseSize(userResponse, builder)
     if correctSize != 0:
@@ -61,16 +61,16 @@ def showIngredientsMenu():
 	print("""
 		SELECCIONE LOS INGREDIENTES O PREFIERE UNA PIZZA DEL MENU
 		Menu:
-		Margarita     (ma)
+		Margarita     (ma)....................... 80 + coste del tamaño
 
 		Ingredientes:
-		Jamón         (ja)
-		Champiñones   (ch)
-		Pimentón      (pi)
-		Doble Queso   (dq)
-		Aceitunas     (ac)
-		Pepperoni     (pp)
-		Salchichón    (sa)""")
+		Jamón         (ja)....................... 40
+		Champiñones   (ch)....................... 35
+		Pimentón      (pi)....................... 30
+		Doble Queso   (dq)....................... 40
+		Aceitunas     (ac)....................... 57.5
+		Pepperoni     (pp)....................... 38.5
+		Salchichón    (sa)....................... 62.5 """)
 
 #Menu para seleccionar los ingredientes (Texto)
 def selectIngredients(builder):
@@ -153,23 +153,8 @@ def getTotalPizzasPrice(pizzas):
 		totalPrice += pizza.getPrice()
 	return totalPrice
 
-def pizzaTipe(builder):
-    userResponse = ''
 
-    print("""
-        SELECCIONE EL TIPO DE PIZZA
-        Opciones: Margarita ( ma ) """, end = ": ")
-    userResponse = input()
-    correctSize = seleccionar_tamaño(builder, userResponse)
-	
-    if correctSize != 0:
-        pass
-    else:
-        print(colorama.Fore.RED + """
-            Debe seleccionar el tamaño correcto!!""")
-        print(colorama.Style.RESET_ALL)
-        seleccionar_tamaño(builder)
-
+#Definicion de la pizza margarita
 def margarita(builder):
 	chooseIngredient("ja",builder)
 	chooseIngredient("dq",builder)
