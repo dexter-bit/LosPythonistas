@@ -14,10 +14,9 @@ class main():
 	clientPizza = []
 
 	while exit == False:
-		pizza = Pizza()
-		director = Kitchen()
 		builder = ParticularPizzaBuilder(pizza)
-		director.builder = builder
+		director = Kitchen() #Objeto cocina
+		builder = ParticularPizzaBuilder(pizza) #Constructor de la pizza 		director.builder = builder
 		clientPizza.append(pizza)
 		
 		print("""

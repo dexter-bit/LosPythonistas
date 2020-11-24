@@ -1,6 +1,6 @@
 import colorama
 
-#MENU
+#MENU (Texto)
 def print_header():
 	print("""
 		Universidad Católica Andrés Bello
@@ -18,6 +18,7 @@ def print_header():
 		*****************************
 		""")
 
+#Menu para seleccionar el tamaño de la pizza (Texto)
 def seleccionar_tamaño(builder):
     userResponse = ''
 
@@ -34,6 +35,7 @@ def seleccionar_tamaño(builder):
         print(colorama.Style.RESET_ALL)
         seleccionar_tamaño(builder)
 
+#Funcion para seleccionar el tamaño
 def chooseSize(size, builder):
     if size == "g":
         builder.setSize("Grande")
@@ -53,6 +55,7 @@ def chooseSize(size, builder):
         print(colorama.Style.RESET_ALL)		
     return 0
 
+#Menu de los ingredientes (Texto)
 def showIngredientsMenu():
 	print("""
 		SELECCIONE LOS INGREDIENTES
@@ -65,6 +68,7 @@ def showIngredientsMenu():
 		Pepperoni     (pp)
 		Salchichón    (sa)""")
 
+#Menu para seleccionar los ingredientes (Texto)
 def selectIngredients(builder):
 	userResponse = ''
 
@@ -87,7 +91,7 @@ def selectIngredients(builder):
 	else:
 		selectIngredients(builder)
 
-#MENU
+#Funcion para seleccionar el ingrediente
 def chooseIngredient(choosenIngredients,builder):
 	if choosenIngredients == "ja":
 		builder.addHam()		
@@ -110,7 +114,7 @@ def chooseIngredient(choosenIngredients,builder):
 		return 0
 	return 1
 
-#menu
+#Menu para agregar otra pizza 
 def selectAnotherPizza():
 	print("""
 		¿Desea agregar otra pizza?[s/n]""", end = ": ")
@@ -127,6 +131,7 @@ def selectAnotherPizza():
 		print('Respuesta invalida, intente otra vez')
 		selectAnotherPizza()
 
+#Funcion Decorativa
 def showAllTargetPizzaData(builder):
 	#print("Usted selecciono una pizza "+ str(builder.getSize())+" con ")
 	#print("Subtotal a pagar por una pizza "+builder.getSize()+" : " + builder.getPrice())
@@ -134,6 +139,7 @@ def showAllTargetPizzaData(builder):
 		*******************************************
 		""")
 
+#Funcion que calcula el precio de las pizza
 def getTotalPizzasPrice(pizzas):
 	totalPrice = 0
 	for pizza in pizzas:
