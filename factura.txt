@@ -2,3 +2,15 @@
 Una pizza Mediana con  por un monto de 733.5
 2020-11-24 23:33:28.487989
 Una pizza Personal con  por un monto de 421.0
+2020-11-25 00:05:03.842475
+Una pizza Margarita con por un monto de 280
+2020-11-25 00:11:06.641146
+Una pizza Mediana con <bound method Pizza.list_parts of <Pizza.Pizza object at 0x000001EA1A412FD0>> por un monto de 508.5
+2020-11-25 00:12:21.100314
+Una pizza Mediana con ['Jamon', 'Salami', 'Pepperoni'] por un monto de 571.0
+2020-11-25 00:19:13.819561
+Una pizza Mediana con Pimenton, por un monto de 733.5
+2020-11-25 00:20:01.019464
+Una pizza Mediana con Pimenton, por un monto de 733.5
+2020-11-25 00:22:29.473702
+Una pizza Mediana con Jamon,Doble Queso,Hongo,Aceituna,Pepperoni,Salami,Pimenton, por un monto de 733.5

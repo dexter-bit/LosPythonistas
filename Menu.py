@@ -1,4 +1,4 @@
-import colorama
+#import colorama
 from datetime import datetime
 
 
@@ -33,9 +33,9 @@ def seleccionar_tamaño(builder):
         pass
     else:
 		
-    	print(colorama.Fore.RED + """
-            Debe seleccionar el tamaño correcto!!""")
-    	print(colorama.Style.RESET_ALL)
+    	#print(colorama.Fore.RED + """
+          #  Debe seleccionar el tamaño correcto!!""")
+    	#print(colorama.Style.RESET_ALL)
         seleccionar_tamaño(builder)
 
 
@@ -53,10 +53,10 @@ def chooseSize(size, builder):
         builder.setSize("Personal")	
         builder.setPrice(280)		
         return 1		
-    else:
-      	print(colorama.Fore.RED + """
-            Debe seleccionar el tamaño correcto!!""")
-        print(colorama.Style.RESET_ALL)	
+    #else:
+      	#print(colorama.Fore.RED + """
+         #   Debe seleccionar el tamaño correcto!!""")
+        #print(colorama.Style.RESET_ALL)	
         	
     return 0
 
@@ -187,12 +187,12 @@ def showReceipt(clientPizza):
 		y=clientPizza[i].list_parts
 		z=clientPizza[i].getPrice()
 		if is_empty(clientPizza[i].getIngredients()):
-			print("Una pizza Margarita con por un monto de " + str(z),end='')
-			archivo.write("Una pizza Margarita con por un monto de " + str(z) + "\n")
+			print("Una pizza Margarita por un monto de " + str(z),end='')
+			archivo.write("Una pizza Margarita por un monto de " + str(z) + "\n")
 			print(",\n")
 		else:
 			print("Una pizza " +str(x)+ " con ",end= '')
-			archivo.write("Una pizza " +str(x)+ " con ")
+			archivo.write("Una pizza " +str(x)+ " con " + str(listIngridients(clientPizza[i].getIngredients())))
 			y()
 			print(" por un monto de " + str(z),end='')
 			archivo.write(" por un monto de " + str(z) + "\n")
@@ -205,6 +205,8 @@ def is_empty(data_structure):
         return False
     else:
         return True
+
+
 
 #Definicion de la pizza margarita
 def margarita(builder):
@@ -242,7 +244,11 @@ def especial(builder):
 def quesoroni(builder):
 	chooseIngredient("dq",builder)
 	chooseIngredient("pp",builder)
-	
 
+#Metodo para imprimir los elementos de una lista en este caso para el uso de guardar la factura
+def listIngridients(list):	
+	ingridients = ""
+	for i in list:
+		ingridients = ingridients + i + ", " 
 
-	
+	return ingridients

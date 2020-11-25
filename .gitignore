@@ -10,3 +10,16 @@ __pycache__/Kitchen.cpython-39.pyc
 *.pyc
 __pycache__/Menu.cpython-39.pyc
 *.pyc
+__pycache__/Kitchen.cpython-39.pyc
+ingredients/__pycache__/Salami.cpython-39.pyc
+ingredients/__pycache__/Pepperoni.cpython-39.pyc
+ingredients/__pycache__/Pepper.cpython-39.pyc
+ingredients/__pycache__/Olive.cpython-39.pyc
+ingredients/__pycache__/Mushroom.cpython-39.pyc
+ingredients/__pycache__/Cheese.cpython-39.pyc
+ingredients/__pycache__/Ham.cpython-39.pyc
+Builders/__pycache__/PizzaBuilder.cpython-39.pyc
+Builders/__pycache__/ParticularPizzaBuilder.cpython-39.pyc
+Builders/__pycache__/__init__.cpython-39.pyc
+__pycache__/Pizza.cpython-39.pyc
+__pycache__/Menu.cpython-39.pyc
