@@ -5,7 +5,7 @@ from Builders.PizzaBuilder import PizzaBuilder
 import Menu
 
 from abc import ABC, abstractmethod, abstractproperty
-import colorama
+
 
 
 class main():	

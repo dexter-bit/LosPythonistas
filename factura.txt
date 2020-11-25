@@ -19,3 +19,5 @@ Una pizza Margarita con por un monto de 430
 		Una pizza Mediana con  por un monto de 693.5
 2020-11-25 00:52:06.481337
 		Una pizza Personal con  por un monto de 583.5
+2020-11-25 14:58:53.587057
+		Una pizza Grande con Jamon, Doble Queso, Hongo, Aceituna, Pepperoni, Salami, Pimenton,  por un monto de 883.5

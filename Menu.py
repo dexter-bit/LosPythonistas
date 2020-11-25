@@ -177,15 +177,15 @@ def showReceipt(clientPizza):
 		y=clientPizza[i].list_parts
 		z=clientPizza[i].getPrice()
 		if is_empty(clientPizza[i].getIngredients()):
-			print("\t\tUna pizza Margarita con por un monto de " + str(z),end='')
-			archivo.write("\t\tUna pizza Margarita con por un monto de " + str(z) + "\n")
+			print("\t\tUna pizza Margarita por un monto de " + str(z),end='')
+			archivo.write("\t\tUna pizza Margarita por un monto de " + str(z) + "\n")
 			print(",\n")
 		else:
 			print("\t\tUna pizza " +str(x)+ " con ",end= '')
-			archivo.write("\t\tUna pizza " +str(x)+ " con ")
+			archivo.write("\t\tUna pizza " +str(x)+ " con " + str(listIngridients(clientPizza[i].getIngredients())))
 			y()
 			print(" por un monto de " + str(z),end='')
-			archivo.write(" por un monto de " + str(z) + "\n")
+			archivo.write("por un monto de " + str(z) + "\n")
 			print(",\n")
 		i+=1
 	archivo.close()
@@ -235,5 +235,11 @@ def quesoroni(builder):
 	chooseIngredient("pp",builder)
 	
 
+#Metodo para imprimir los elementos de una lista en este caso para el uso de guardar la factura
+def listIngridients(list):	
+	ingridients = ""
+	for i in list:
+		ingridients = ingridients + i + ", " 
 
+	return ingridients
 	
