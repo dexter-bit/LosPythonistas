@@ -1,4 +1,6 @@
 import colorama
+from datetime import datetime
+
 
 #MENU (Texto)
 def print_header():
@@ -30,9 +32,10 @@ def seleccionar_tamaño(builder):
     if correctSize != 0:
         pass
     else:
-        print(colorama.Fore.RED + """
+		
+    	print(colorama.Fore.RED + """
             Debe seleccionar el tamaño correcto!!""")
-        print(colorama.Style.RESET_ALL)
+    	print(colorama.Style.RESET_ALL)
         seleccionar_tamaño(builder)
 
 
@@ -51,9 +54,10 @@ def chooseSize(size, builder):
         builder.setPrice(280)		
         return 1		
     else:
-        print(colorama.Fore.RED + """
+      	print(colorama.Fore.RED + """
             Debe seleccionar el tamaño correcto!!""")
-        print(colorama.Style.RESET_ALL)		
+        print(colorama.Style.RESET_ALL)	
+        	
     return 0
 
 #Menu de los ingredientes (Texto)
@@ -169,27 +173,33 @@ def getTotalPizzasPrice(pizzas):
 		totalPrice += pizza.getPrice()
 	return totalPrice
 
-#mostrar factura
+#mostrar factura y guardar factura
 def showReceipt(clientPizza):
 
 	print(""" El pedido tiene un total de """ + str(len(clientPizza)) + """ pizza(s) """)
-
+	
 	print("""Usted ha ordenado: """)
 	i=0
+	archivo = open("factura.txt", "a")
+	archivo.write(str(datetime.today()) + "\n")
 	while i < len(clientPizza):
 		x=clientPizza[i].getSize()
 		y=clientPizza[i].list_parts
 		z=clientPizza[i].getPrice()
 		if is_empty(clientPizza[i].getIngredients()):
 			print("Una pizza Margarita con por un monto de " + str(z),end='')
+			archivo.write("Una pizza Margarita con por un monto de " + str(z) + "\n")
 			print(",\n")
 		else:
 			print("Una pizza " +str(x)+ " con ",end= '')
+			archivo.write("Una pizza " +str(x)+ " con ")
 			y()
 			print(" por un monto de " + str(z),end='')
+			archivo.write(" por un monto de " + str(z) + "\n")
 			print(",\n")
 		i+=1
-		
+	archivo.close()
+#funcion que permite saber si una estructura esta vacia o no		
 def is_empty(data_structure):
     if data_structure:
         return False
@@ -201,6 +211,7 @@ def margarita(builder):
 	chooseIngredient("ja",builder)
 	chooseIngredient("dq",builder)
 
+#Definicion de la pizza fullhouse
 def fullhouse(builder):
 	chooseIngredient("ja",builder)
 	chooseIngredient("dq",builder)
@@ -210,21 +221,28 @@ def fullhouse(builder):
 	chooseIngredient("sa",builder)
 	chooseIngredient("pi",builder)
 
+#Definicion de la pizza champimenton
 def champimenton(builder):
 	chooseIngredient("pi",builder)
 	chooseIngredient("ch",builder)
 
+#Definicion de la pizza vegetariana
 def vegetariana(builder):
 	chooseIngredient("pi",builder)
 	chooseIngredient("ch",builder)
 	chooseIngredient("ac",builder)
 
+#Definicion de la pizza especial
 def especial(builder):
 	chooseIngredient("ja",builder)
 	chooseIngredient("sa",builder)
 	chooseIngredient("pp",builder)
 
+#Definicion de la pizza quesoroni
 def quesoroni(builder):
 	chooseIngredient("dq",builder)
 	chooseIngredient("pp",builder)
+	
+
+
 	

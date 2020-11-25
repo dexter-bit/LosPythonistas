@@ -28,6 +28,7 @@ class main():
 		Menu.showAllTargetPizzaData(builder)
 		
 	Menu.showReceipt(clientPizza)
+	
 	print("""El monto total a pagar seria """ + str(Menu.getTotalPizzasPrice(clientPizza)))
 	print("""¡Gracias por su compra! Regrese pronto""")
 
