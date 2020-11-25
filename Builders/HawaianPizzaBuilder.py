@@ -1,12 +1,10 @@
-from Pizza import Pizza
-from PizzaBuilder import PizzaBuilder
+from Builders.PizzaBuilder import PizzaBuilder
 
-class MargaritaPizzaBuilder(PizzaBuilder):	
+class HawaianPizzaBuilder(PizzaBuilder):	
 	def __init__(self):
 		self.test="prueba"
 
 	def getPizza(self) -> None:
-		
 		pass
 
 	def setPizza(self) -> None:
