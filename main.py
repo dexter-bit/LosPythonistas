@@ -5,7 +5,7 @@ from Builders.PizzaBuilder import PizzaBuilder
 import Menu
 
 from abc import ABC, abstractmethod, abstractproperty
-
+import colorama
 
 
 class main():	
@@ -19,8 +19,9 @@ class main():
 		builder = ParticularPizzaBuilder(pizza) #Constructor de la pizza 		director.builder = builder
 		clientPizza.append(pizza)
 		
-		print("""
+		print(colorama.Fore.GREEN + """
 			Pizza número """+ str(len(clientPizza)))
+		print(colorama.Style.RESET_ALL)
 		Menu.selectSize(builder)
 		Menu.showIngredientsMenu()
 		Menu.selectIngredients(builder)
@@ -28,6 +29,6 @@ class main():
 		
 	Menu.showReceipt(clientPizza)
 	
-	print("""\t\tEl monto total a pagar seria """ + str(Menu.getTotalPizzasPrice(clientPizza)))
-	print("""\t\t¡Gracias por su compra! Regrese pronto""")
-
+	print(colorama.Fore.BLUE + """\t\tEl monto total a pagar seria """ + str(Menu.getTotalPizzasPrice(clientPizza)))
+	print(colorama.Fore.BLUE + """\t\t¡Gracias por su compra! Regrese pronto""")
+	print(colorama.Style.RESET_ALL)
