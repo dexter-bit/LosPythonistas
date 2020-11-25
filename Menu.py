@@ -169,6 +169,32 @@ def getTotalPizzasPrice(pizzas):
 		totalPrice += pizza.getPrice()
 	return totalPrice
 
+#mostrar factura
+def showReceipt(clientPizza):
+
+	print(""" El pedido tiene un total de """ + str(len(clientPizza)) + """ pizza(s) """)
+
+	print("""Usted ha ordenado: """)
+	i=0
+	while i < len(clientPizza):
+		x=clientPizza[i].getSize()
+		y=clientPizza[i].list_parts
+		z=clientPizza[i].getPrice()
+		if is_empty(clientPizza[i].getIngredients()):
+			print("Una pizza Margarita con por un monto de " + str(z),end='')
+			print(",\n")
+		else:
+			print("Una pizza " +str(x)+ " con ",end= '')
+			y()
+			print(" por un monto de " + str(z),end='')
+			print(",\n")
+		i+=1
+		
+def is_empty(data_structure):
+    if data_structure:
+        return False
+    else:
+        return True
 
 #Definicion de la pizza margarita
 def margarita(builder):

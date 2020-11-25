@@ -26,10 +26,8 @@ class main():
 		Menu.selectIngredients(builder)
 		exit = Menu.selectAnotherPizza()
 		Menu.showAllTargetPizzaData(builder)
-
-	print("""
-		El pedido tiene un total de """ + str(len(clientPizza)) + """ pizza(s) por un monto de """ + str(Menu.getTotalPizzasPrice(clientPizza)))
-	print("""
-		¡Gracias por su compra! Regrese pronto
 		
-		""")
+	Menu.showReceipt(clientPizza)
+	print("""El monto total a pagar seria """ + str(Menu.getTotalPizzasPrice(clientPizza)))
+	print("""¡Gracias por su compra! Regrese pronto""")
+

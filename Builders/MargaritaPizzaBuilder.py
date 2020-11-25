@@ -69,5 +69,5 @@ class MargaritaPizzaBuilder(PizzaBuilder):
 	def getIngre(self) :
 		self.Pizza.list_parts()
 
-	def margarita():
-		getIngre()
+	#def margarita():
+	#	getIngre()
