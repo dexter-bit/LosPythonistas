@@ -1,4 +1,4 @@
-from PizzaBuilder import PizzaBuilder
+from Builders.PizzaBuilder import PizzaBuilder
 from Pizza import Pizza
 from ingredients.Ham import Ham
 from ingredients.Cheese import Cheese
@@ -22,12 +22,12 @@ class ParticularPizzaBuilder(PizzaBuilder):
         self.Pizza.addIngredient(ham.name)
         self.Pizza.addPrice(ham.price)
 
-    def addMushrooms(self):
+    def addMushrooms(self) -> None:
         mushroom = Mushroom()
         self.Pizza.addIngredient(mushroom.name)
         self.Pizza.addPrice(mushroom.price)
 
-    def addPeppers(self):
+    def addPeppers(self) -> None:
         pepper = Pepper()
         self.Pizza.addIngredient(pepper.name)
         self.Pizza.addPrice(pepper.price)
@@ -63,3 +63,7 @@ class ParticularPizzaBuilder(PizzaBuilder):
 
     def getPrice(self) -> None:
         return self.Pizza.getPrice()
+
+    def getIngre(self) -> None:
+        self.Pizza.list_parts()
+

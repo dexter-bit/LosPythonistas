@@ -1,4 +1,4 @@
-from PizzaBuilder import PizzaBuilder
+from Builders.PizzaBuilder import PizzaBuilder
 from abc import ABC, abstractmethod, abstractproperty
 
 class Kitchen():

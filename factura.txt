@@ -1,0 +1,21 @@
+2020-11-24 23:33:12.931143
+Una pizza Mediana con  por un monto de 733.5
+2020-11-24 23:33:28.487989
+Una pizza Personal con  por un monto de 421.0
+2020-11-25 00:17:52.319557
+Una pizza Mediana con  por un monto de 557.5
+2020-11-25 00:27:19.039721
+Una pizza Mediana con  por un monto de 552.5
+2020-11-25 00:33:50.745485
+Una pizza Margarita con por un monto de 430
+2020-11-25 00:43:36.310991
+		Una pizza Grande con  por un monto de 682.5
+2020-11-25 00:46:21.346667
+		Una pizza Grande con  por un monto de 672.5
+		Una pizza Personal con  por un monto de 376.0
+		Una pizza Grande con  por un monto de 883.5
+2020-11-25 00:47:40.985233
+		Una pizza Margarita con por un monto de 580
+		Una pizza Mediana con  por un monto de 693.5
+2020-11-25 00:52:06.481337
+		Una pizza Personal con  por un monto de 583.5
