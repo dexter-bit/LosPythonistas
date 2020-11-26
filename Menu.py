@@ -1,10 +1,10 @@
-#import colorama
+import colorama
 from datetime import datetime
 
 
 #MENU (Texto)
 def print_header():
-	print("""
+	print(colorama.Fore.YELLOW + """
 		Universidad Católica Andrés Bello
 		Ingeniería Informática
 		Programación en Python - Proyecto #1
@@ -19,6 +19,7 @@ def print_header():
 		*       PIZZERIA UCAB       *
 		*****************************
 		""")
+	print(colorama.Style.RESET_ALL)
 
 #Menu para seleccionar el tamaño de la pizza (Texto)
 def selectSize(builder):
@@ -64,12 +65,12 @@ def showIngredientsMenu():
 	print("""
 		SELECCIONE LOS INGREDIENTES O PREFIERE UNA PIZZA DEL MENU
 		Menu:
-		Margarita		(ma)....................... 80 + coste del tamaño	-> jamon, doble queso
-		Full House		(fh)....................... 303.5 + coste del tamaño	-> todos los ingredientes
-		Champimenton		(cp)....................... 65 + coste del tamaño	-> champiñones, pimenton
-		Vegetariana		(vg)....................... 122.5 + coste del tamaño	-> champiñones, pimenton, aceitunas
-		Especial		(es)....................... 141 + coste del tamaño	-> jamon, pepperoni, salchichon
-		Quesoroni		(qs)....................... 78.5 + coste del tamaño	-> doble queso, pepperoni
+		Margarita		(ma)....................... 80 + coste del tamaño       -> jamon, doble queso
+		Full House		(fh)....................... 303.5 + coste del tamaño    -> todos los ingredientes
+		Champimenton		(cp)....................... 65 + coste del tamaño   -> champiñones, pimenton
+		Vegetariana		(vg)....................... 122.5 + coste del tamaño    -> champiñones, pimenton, aceitunas
+		Especial		(es)....................... 141 + coste del tamaño      -> jamon, pepperoni, salchichon
+		Quesoroni		(qs)....................... 78.5 + coste del tamaño     -> doble queso, pepperoni
 
 		Ingredientes:
 		Jamón         (ja)....................... 40
@@ -135,7 +136,7 @@ def chooseIngredient(choosenIngredients,builder):
 	elif choosenIngredients == "":
 		return 1
 	else:
-		print('ingrediente invalido')		
+		#print('ingrediente invalido')		
 		return 0
 	return 1
 
@@ -153,7 +154,9 @@ def selectAnotherPizza():
 	elif (userResponse == "N"):
 		return True  
 	else:
-		print('Respuesta invalida, intente otra vez')
+		print(colorama.Fore.RED + """ 
+			Debe seleccionar una opcion valida!!""")
+		print(colorama.Style.RESET_ALL)
 		selectAnotherPizza()
 
 #Funcion que calcula el precio de las pizza
@@ -166,9 +169,12 @@ def getTotalPizzasPrice(pizzas):
 #mostrar factura y guardar factura
 def showReceipt(clientPizza):
 
-	print(""" \t\tEl pedido tiene un total de """ + str(len(clientPizza)) + """ pizza(s) """)
+	print(colorama.Fore.GREEN + """ 
+		El pedido tiene un total de """ + str(len(clientPizza)) + """ pizza(s) """)
 	
 	print(""" \t\tUsted ha ordenado: """)
+	print(colorama.Style.RESET_ALL)
+	
 	i=0
 	archivo = open("factura.txt", "a")
 	archivo.write(str(datetime.today()) + "\n")
@@ -177,16 +183,18 @@ def showReceipt(clientPizza):
 		y=clientPizza[i].list_parts
 		z=clientPizza[i].getPrice()
 		if is_empty(clientPizza[i].getIngredients()):
-			print("\t\tUna pizza Margarita por un monto de " + str(z),end='')
+			print(colorama.Fore.GREEN + "\t\tUna pizza Margarita por un monto de " + str(z),end='')
 			archivo.write("\t\tUna pizza Margarita por un monto de " + str(z) + "\n")
 			print(",\n")
+			print(colorama.Style.RESET_ALL)
 		else:
-			print("\t\tUna pizza " +str(x)+ " con ",end= '')
+			print(colorama.Fore.GREEN + "\t\tUna pizza " +str(x)+ " con ",end= '')
 			archivo.write("\t\tUna pizza " +str(x)+ " con " + str(listIngridients(clientPizza[i].getIngredients())))
 			y()
 			print(" por un monto de " + str(z),end='')
 			archivo.write("por un monto de " + str(z) + "\n")
 			print(",\n")
+			print(colorama.Style.RESET_ALL)
 		i+=1
 	archivo.close()
 
@@ -201,6 +209,7 @@ def is_empty(data_structure):
 def margarita(builder):
 	chooseIngredient("ja",builder)
 	chooseIngredient("dq",builder)
+	return 1
 
 #Definicion de la pizza fullhouse
 def fullhouse(builder):
@@ -211,29 +220,33 @@ def fullhouse(builder):
 	chooseIngredient("pp",builder)
 	chooseIngredient("sa",builder)
 	chooseIngredient("pi",builder)
+	return 1
 
 #Definicion de la pizza champimenton
 def champimenton(builder):
 	chooseIngredient("pi",builder)
 	chooseIngredient("ch",builder)
+	return 1
 
 #Definicion de la pizza vegetariana
 def vegetariana(builder):
 	chooseIngredient("pi",builder)
 	chooseIngredient("ch",builder)
 	chooseIngredient("ac",builder)
+	return 1
 
 #Definicion de la pizza especial
 def especial(builder):
 	chooseIngredient("ja",builder)
 	chooseIngredient("sa",builder)
 	chooseIngredient("pp",builder)
+	return 1
 
 #Definicion de la pizza quesoroni
 def quesoroni(builder):
 	chooseIngredient("dq",builder)
 	chooseIngredient("pp",builder)
-	
+	return 1
 
 #Metodo para imprimir los elementos de una lista en este caso para el uso de guardar la factura
 def listIngridients(list):	
