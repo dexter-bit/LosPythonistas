@@ -1,4 +1,4 @@
 class Salami():
     def __init__(self) -> None:
-	    self.name = "Salami"
+	    self.name = "Salchichon"
 	    self.price = 62.5
