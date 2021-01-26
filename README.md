@@ -9,5 +9,4 @@ Integrantes del equipo:
 - Ángel Sucasas
 
 ## Diagrama de clases del proyecto 
-![Untitled Diagram (2)](https://user-images.githubusercontent.com/44983658/100298704-2ba0e100-2f68-11eb-9ad2-64369fcbd918.png)
-
+![image](https://user-images.githubusercontent.com/44983658/99891238-17927200-2c3e-11eb-859a-3437ddca759b.png)
